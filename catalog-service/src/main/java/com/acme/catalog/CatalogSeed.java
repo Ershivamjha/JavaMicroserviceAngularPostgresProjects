@@ -1,0 +1,2 @@
+package com.acme.catalog; import com.acme.catalog.entity.Product; import com.acme.catalog.repository.ProductRepository; import java.math.BigDecimal; import org.springframework.boot.CommandLineRunner; import org.springframework.context.annotation.*;
+@Configuration class CatalogSeed {@Bean CommandLineRunner seed(ProductRepository r){return a->{if(r.count()==0){r.save(new Product("LAPTOP-01","Developer Laptop",new BigDecimal("1499.00")));r.save(new Product("MONITOR-01","4K Monitor",new BigDecimal("499.00")));}};}}

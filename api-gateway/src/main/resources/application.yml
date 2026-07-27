@@ -1,0 +1,13 @@
+server.port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: catalog
+          uri: http://catalog-service:8081
+          predicates: [Path=/catalog/**]
+          filters: [StripPrefix=1]
+        - id: orders
+          uri: http://order-service:8082
+          predicates: [Path=/orders/**]
+          filters: [StripPrefix=1]

@@ -1,0 +1,1 @@
+package com.acme.orders.repository; import com.acme.orders.entity.PurchaseOrder; import org.springframework.data.jpa.repository.JpaRepository; public interface OrderRepository extends JpaRepository<PurchaseOrder,Long>{}
