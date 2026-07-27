@@ -5,7 +5,7 @@ A runnable Spring Boot microservices example with independently deployable Catal
 ## Architecture
 
 ```text
-Client → API Gateway (:8080) → Catalog service (:8081) → catalog-db
+Angular UI (:4200) → API Gateway (:8080) → Catalog service (:8081) → catalog-db
                             → Order service   (:8082) → orders-db
                                       │
                                       └──────────→ Catalog service
@@ -15,7 +15,7 @@ Client → API Gateway (:8080) → Catalog service (:8081) → catalog-db
 
 `docker compose up --build`
 
-Use `http://localhost:8080/catalog/api/products` and `http://localhost:8080/orders/api/orders`. The gateway routes `/catalog/**` and `/orders/**`; the services are also exposed locally for debugging.
+Open the Angular dashboard at `http://localhost:4200`. It calls only the API Gateway, which routes `/catalog/**` and `/orders/**`; the services are also exposed locally for debugging.
 
 ### Example
 
