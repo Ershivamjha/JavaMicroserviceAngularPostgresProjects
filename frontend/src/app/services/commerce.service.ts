@@ -1,0 +1,2 @@
+import {Injectable} from '@angular/core'; import {HttpClient} from '@angular/common/http'; import {Product,Order} from '../models/commerce';
+@Injectable({providedIn:'root'}) export class CommerceService {private base='/api';constructor(private http:HttpClient){} products(){return this.http.get<Product[]>(`${this.base}/catalog/api/products`);} orders(){return this.http.get<Order[]>(`${this.base}/orders/api/orders`);} createOrder(body:{customerEmail:string;sku:string;quantity:number}){return this.http.post<Order>(`${this.base}/orders/api/orders`,body);}}
