@@ -1,0 +1,1 @@
+package com.acme.catalog.dto; import com.acme.catalog.entity.Product; import java.math.BigDecimal; public record ProductResponse(String sku,String name,BigDecimal price,boolean active){public static ProductResponse of(Product p){return new ProductResponse(p.getSku(),p.getName(),p.getPrice(),p.isActive());}}
